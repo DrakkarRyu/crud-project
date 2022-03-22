@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <UsersForm getUsers={getUsers} userSelected={userSelected}/>
+      <UsersForm getUsers={getUsers} userSelected={userSelected} selectUser={selectUser}/>
       <UsersList users={users} selectUser={selectUser}/>
     </div>
   );

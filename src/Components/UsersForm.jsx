@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const UsersForm = ({ getUsers , userSelected, modifyUser }) => {
+const UsersForm = ({ getUsers , userSelected , selectUser}) => {
 
     const { register, handleSubmit, reset } = useForm();
     const defaultValues = { first_name: "", last_name: "", email: "", password: "", birthday: "" }
@@ -10,7 +10,10 @@ const UsersForm = ({ getUsers , userSelected, modifyUser }) => {
 
     if (userSelected){
         axios.put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, data)
-        .then(() => getUsers())
+        .then(() => {
+            getUsers()
+            selectUser(null)
+        })
         reset(defaultValues);
         console.log("se actualiza");
     }else{
