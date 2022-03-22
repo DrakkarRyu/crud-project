@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
-const UsersForm = ({ getUsers }) => {
+const UsersForm = ({ getUsers , userSelected }) => {
 
     const { register, handleSubmit, reset } = useForm();
     const defaultValues = { first_name: "", last_name: "", email: "", password: "", birthday: "" }
@@ -11,6 +12,20 @@ const UsersForm = ({ getUsers }) => {
             .then(() => getUsers())
         reset(defaultValues);
     }
+
+    useEffect(() => { 
+        if (userSelected) {
+            const selectUser = {
+                first_name: userSelected?.first_name,
+                last_name: userSelected?.last_name,
+                email: userSelected?.email,
+                password: userSelected?.password,
+                birthday: userSelected?.birthday
+            }
+            reset(selectUser)
+        }
+    }, [userSelected, reset]);
+
     return (
         <form onSubmit={handleSubmit(submit)}>
             <div>
