@@ -10,7 +10,7 @@ const UsersList = ({ users, selectUser }) => {
                         <h2>{user.first_name}, {user.last_name}</h2>
                         <p><b>Email: </b>{user.email}</p>
                         <p><b>Birthday: </b>{user.birthday}</p>
-                        <button onClick={() => selectUser (user)}>Select</button>
+                        <button onClick={() => selectUser (user)}>Edit</button>
                     </li>
                 ))
             }
