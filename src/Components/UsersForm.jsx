@@ -11,6 +11,7 @@ const UsersForm = ({ getUsers , userSelected, modifyUser }) => {
     if (userSelected){
         axios.put(`https://users-crud1.herokuapp.com/users/${userSelected.id}/`, data)
         .then(() => getUsers())
+        reset(defaultValues);
         console.log("se actualiza");
     }else{
         console.log(data)
