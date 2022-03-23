@@ -6,8 +6,8 @@ import UsersList from "./Components/UsersList";
 function App() {
 
   const [users, setUsers] = useState([]);
-  const [userSelected, setUserSelected] = useState (null);
-  console.log (userSelected)
+  const [userSelected, setUserSelected] = useState(null);
+  console.log(userSelected)
 
   useEffect(() => {
     axios.get(`https://users-crud1.herokuapp.com/users/`)
@@ -18,12 +18,17 @@ function App() {
     axios.get('https://users-crud1.herokuapp.com/users/')
       .then(res => setUsers(res.data));
   }
-  const selectUser = user => setUserSelected (user) 
+  const selectUser = user => setUserSelected(user)
+
+  const deleteUser = id => {
+    axios.delete(`https://users-crud1.herokuapp.com/users/${id}`)
+      .then(() => getUsers());
+  }
 
   return (
     <div className="App">
-      <UsersForm getUsers={getUsers} userSelected={userSelected} selectUser={selectUser}/>
-      <UsersList users={users} selectUser={selectUser}/>
+      <UsersForm getUsers={getUsers} userSelected={userSelected} selectUser={selectUser} />
+      <UsersList users={users} selectUser={selectUser} deleteUser={deleteUser} />
     </div>
   );
 }
