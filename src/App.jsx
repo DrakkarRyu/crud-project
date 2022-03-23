@@ -7,7 +7,6 @@ function App() {
 
   const [users, setUsers] = useState([]);
   const [userSelected, setUserSelected] = useState(null);
-  console.log(userSelected)
 
   useEffect(() => {
     axios.get(`https://users-crud1.herokuapp.com/users/`)

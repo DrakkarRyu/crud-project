@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UsersList = ({ users, selectUser, deleteUser }) => { console.log(users);
+const UsersList = ({ users, selectUser, deleteUser }) => {
     return (
         <div>
             Users

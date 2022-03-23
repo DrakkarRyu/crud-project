@@ -15,9 +15,7 @@ const UsersForm = ({ getUsers , userSelected , selectUser}) => {
             selectUser(null)
         })
         reset(defaultValues);
-        console.log("se actualiza");
     }else{
-        console.log(data)
         axios.post('https://users-crud1.herokuapp.com/users/', data)
             .then(() => getUsers())
         reset(defaultValues);}
