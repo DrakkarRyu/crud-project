@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import './UsersForm.css'
 
 const UsersForm = ({ getUsers , userSelected , selectUser}) => {
 
@@ -35,29 +36,31 @@ const UsersForm = ({ getUsers , userSelected , selectUser}) => {
     }, [userSelected, reset]);
 
     return (
+        <div className='form'>
         <form onSubmit={handleSubmit(submit)}>
-            <div>
-                <label htmlFor='fist_name-input'>First Name </label>
+            <li>
+                <label htmlFor='fist_name-input'>First Name: </label>
                 <input type='text' id='first_name-input' {...register("first_name")} />
-            </div>
-            <div>
-                <label htmlFor='last_name-input'>Last Name </label>
+            </li>
+            <li>
+                <label htmlFor='last_name-input'>Last Name: </label>
                 <input type='text' id='last_name-input' {...register("last_name")} />
-            </div>
-            <div>
-                <label htmlFor='email-input'>Email </label>
+            </li>
+            <li>
+                <label htmlFor='email-input'>Email: </label>
                 <input type='email' id='email-input' {...register("email")} />
-            </div>
-            <div>
-                <label htmlFor='password-input'>Password </label>
+            </li>
+            <li>
+                <label htmlFor='password-input'>Password: </label>
                 <input type='password' id='password-input' {...register("password")} />
-            </div>
-            <div>
-                <label htmlFor='birthday-input'>Birthday </label>
+            </li>
+            <li>
+                <label htmlFor='birthday-input'>Birthday: </label>
                 <input type='date' id='birthday-input' {...register("birthday")} />
-            </div>
+            </li>
             <button>Submit</button>
         </form>
+        </div>
     )
 }
 

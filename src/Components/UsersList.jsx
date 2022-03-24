@@ -1,9 +1,9 @@
 import React from 'react';
+import './UserList.css'
 
 const UsersList = ({ users, selectUser, deleteUser }) => {
     return (
-        <div>
-            Users
+        <div className='card'>
             {
                 users?.map(user => (
                     <li key={user.id}>
