@@ -1,4 +1,4 @@
-.card {
+.form {
     width: 50vw;
     margin-left: 25%;
     margin-top: 50px;
@@ -9,4 +9,12 @@
     justify-content: center;
     background-color: #ffffff;
     list-style: none;
+}
+
+.form li {
+    margin-top: 15px;
+}
+
+.form button {
+    margin-top: 15px;
 }
