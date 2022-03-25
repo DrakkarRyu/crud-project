@@ -19,3 +19,11 @@
 .card button {
     margin-top: 15px;
 }
+
+.edit i{
+    background-color: #ffff00;
+}
+
+.delete i{
+    background-color: #ff0000;
+}

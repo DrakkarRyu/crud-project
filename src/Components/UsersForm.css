@@ -17,4 +17,9 @@
 
 .form button {
     margin-top: 15px;
+    background-color: #008000;
+}
+
+.add i {
+    background-color: #008000;
 }
