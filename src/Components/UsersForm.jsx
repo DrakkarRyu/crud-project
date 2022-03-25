@@ -58,7 +58,7 @@ const UsersForm = ({ getUsers , userSelected , selectUser}) => {
                 <label htmlFor='birthday-input'>Birthday: </label>
                 <input type='date' id='birthday-input' {...register("birthday")} />
             </li>
-            <button>Submit</button>
+            <button><i class="fa-solid fa-user-plus"></i></button>
         </form>
         </div>
     )
