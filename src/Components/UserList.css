@@ -10,6 +10,7 @@
     justify-content: center;
     background-color: #ffffff;
     list-style: none;
+    opacity: 75%;
 }
 
 .card li {
